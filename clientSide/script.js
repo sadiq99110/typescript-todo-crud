@@ -6,7 +6,7 @@
  .then(data => {
      if (data.length > 0) {
          data.forEach(todo => {
-             console.log("TodoItems", todo);
+             console.log("TodoItems", todo); 
              updateTodoList(todo);
          });
      } else {
