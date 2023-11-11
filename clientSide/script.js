@@ -1,7 +1,7 @@
  var id;
  var response;
  // Fetch and display existing todo items on page load
- fetch('http://localhost:3000/api/v1/posts')
+ fetch('https://typecript-todo-api-f653ff8527ee.herokuapp.com/api/v1/posts/')
  .then(response => response.json())
  .then(data => {
      if (data.length > 0) {
@@ -33,7 +33,7 @@ function addTodo() {
  };
 
  // Use AJAX to post data to the server
- fetch('http://localhost:3000/api/v1/posts', {
+ fetch('https://typecript-todo-api-f653ff8527ee.herokuapp.com/api/v1/posts/', {
      method: 'POST',
      headers: {
          'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ var deleteButton = document.createElement('button');
 deleteButton.textContent = 'Delete';
 deleteButton.onclick = function () {
 // Call your delete API here with the todo item's ID
-fetch(`http://localhost:3000/api/v1/posts/${todo._id}`, {
+fetch(`https://typecript-todo-api-f653ff8527ee.herokuapp.com/api/v1/posts//${todo._id}`, {
  method: 'DELETE',
 })
 .then(() => {
@@ -123,7 +123,7 @@ function updateTodo(todo) {
 
     if (title != null || description != null || author != null || published != null) {
         console.log("Id", id);
-        fetch(`http://localhost:3000/api/v1/posts/${id}`, {
+        fetch(`https://typecript-todo-api-f653ff8527ee.herokuapp.com/api/v1/posts//${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
